@@ -1,0 +1,38 @@
+function classificarPessoas(pessoas) {
+  for (let i = 0; i < pessoas.length; i++) {
+    const pessoa = pessoas[i];
+    let classificacao = "";
+
+    if (pessoa.idade <= 0){
+       classificacao = "Idade não Permitida!!!";
+    } else if (pessoa.idade < 12){
+      classificacao = "Criança";
+    } else if (pessoa.idade >= 12 && pessoa.idade <= 17) {
+      classificacao = "Adolescente";
+    } else {
+      classificacao = "Adulto";
+    }
+
+    console.log(`Nome:${pessoa.nome}, Idade:${pessoa.idade}, Email:${pessoa.email}, ${classificacao}`);
+  }
+
+  return pessoas.length;
+}
+
+// Exemplo de uso da função
+const listaPessoas = [
+  { nome: "João", idade: 0, email: "joao@mentoria1.com" },
+  { nome: "Adriana", idade: 15, email: "adriana@mentoria1.com" },
+  { nome: "Claudinei", idade: 20, email: "claudinei@mentoria1.com" },
+  { nome: "Nique", idade: 20, email: "nique@mentoria1.com" },
+  { nome: "Eduardo", idade: 5, email: "eduardo@mentoria1.com" },
+  { nome: "Leda", idade: 18, email: "leda@mentoria1.com" },
+  { nome: "Andrea", idade: 12, email: "andrea@mentoria1.com" },
+  { nome: "Gabriel", idade: 9, email: "gabriel@mentoria1.com" },
+  { nome: "Laura", idade: 17, email: "laura@mentoria1.com" },
+];
+
+
+const numeroPessoas = classificarPessoas(listaPessoas);
+console.log();
+console.log(`Número de pessoas na lista: ${numeroPessoas}`);
